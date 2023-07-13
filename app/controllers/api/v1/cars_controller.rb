@@ -1,11 +1,43 @@
 class Api::V1::CarsController < ApplicationController
-  def index; end
+  def index
+    @cars = Car.all
+    render json: @cars
+  end
 
-  def show; end
+  def show
+    @car = Car.find(params[:id])
+    render json: @car
+  end
 
-  def create; end
+  def create
+    @car = Car.new(car_params)
 
-  def update; end
+    if @car.save
+      render json: { car: @car, message: 'success' }, status: :created
+    else
+      render json: { error: 'Error creating car' }, status: :unprocessable_entity
+    end
+  end
 
-  def destroy; end
+  def update
+    @car = Car.find(params[:id])
+
+    if @car.update(car_params)
+      render json: @car
+    else
+      render json: { error: 'Error updating car' }, status: :unprocessable_entity
+    end
+  end
+
+  def destroy
+    @car = Car.find(params[:id])
+    @car.destroy
+    head :no_content
+  end
+
+  private
+
+  def car_params
+    params.require(:car).permit(:user_id, :name, :image, :description, :price, :model)
+  end
 end
