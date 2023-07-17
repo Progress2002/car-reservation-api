@@ -1,8 +1,8 @@
-user_1 = User.create(user_name: "JohnDoe", email: "john@example.com", password: "password")
-user_2 = User.create(user_name: "JaneSmith", email: "jane@example.com", password: "password")
-user_3 = User.create(user_name: "MikeJohnson", email: "mike@example.com", password: "password")
-user_4 = User.create(user_name: "EmilyBrown", email: "emily@example.com", password: "password")
-user_5 = User.create(user_name: "DavidLee", email: "david@example.com", password: "password")
+user_1 = User.create(username: "JohnDoe", email: "john@example.com", password: "password")
+user_2 = User.create(username: "JaneSmith", email: "jane@example.com", password: "password")
+user_3 = User.create(username: "MikeJohnson", email: "mike@example.com", password: "password")
+user_4 = User.create(username: "EmilyBrown", email: "emily@example.com", password: "password")
+user_5 = User.create(username: "DavidLee", email: "david@example.com", password: "password")
 
 
 User.all.each do |user|
@@ -22,9 +22,13 @@ User.all.each do |user|
     2.times do
       car = Car.all.sample
       user.reservations.create(
-        date: Faker::Date.between(from: Date.today, to: 1.month.from_now),
+        start_date: Faker::Date.between(from: 1.month.from_now, to: 2.months.from_now),
+        end_date: Faker::Date.between(from: Date.today, to: 1.month.from_now),
         city: Faker::Address.city,
         car: car
       )
     end
   end
+  
+  
+  
