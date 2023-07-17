@@ -6,4 +6,8 @@ Rails.application.routes.draw do
       resources :cars, only: %i[index update show create destroy]
     end
   end
+  devise_for :users, controllers: {
+    sessions: 'api/v1/sessions',
+    registrations: 'api/v1/registrations'
+  }
 end

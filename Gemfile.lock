@@ -67,12 +67,21 @@ GEM
       minitest (>= 5.1)
       tzinfo (~> 2.0)
     ast (2.4.2)
+    bcrypt (3.1.19)
     bootsnap (1.16.0)
       msgpack (~> 1.2)
     builder (3.2.4)
     concurrent-ruby (1.2.2)
     crass (1.0.6)
     date (3.3.3)
+    devise (4.9.2)
+      bcrypt (~> 3.0)
+      orm_adapter (~> 0.1)
+      railties (>= 4.1.0)
+      responders
+      warden (~> 1.2.3)
+    devise-token_authenticatable (1.1.0)
+      devise (>= 4.0.0, < 5.0.0)
     diff-lcs (1.5.0)
     erubi (1.12.0)
     faker (3.2.0)
@@ -108,6 +117,7 @@ GEM
     nio4r (2.5.9)
     nokogiri (1.15.3-x86_64-linux)
       racc (~> 1.4)
+    orm_adapter (0.5.0)
     parallel (1.23.0)
     parser (3.2.2.3)
       ast (~> 2.4.1)
@@ -152,6 +162,9 @@ GEM
     rainbow (3.1.1)
     rake (13.0.6)
     regexp_parser (2.8.1)
+    responders (3.1.0)
+      actionpack (>= 5.2)
+      railties (>= 5.2)
     rexml (3.2.5)
     rspec-core (3.12.2)
       rspec-support (~> 3.12.0)
@@ -189,6 +202,8 @@ GEM
     tzinfo (2.0.6)
       concurrent-ruby (~> 1.0)
     unicode-display_width (2.4.2)
+    warden (1.2.9)
+      rack (>= 2.0.9)
     websocket-driver (0.7.5)
       websocket-extensions (>= 0.1.0)
     websocket-extensions (0.1.5)
@@ -199,6 +214,8 @@ PLATFORMS
 
 DEPENDENCIES
   bootsnap
+  devise
+  devise-token_authenticatable
   faker
   pg (~> 1.1)
   puma (~> 5.0)
