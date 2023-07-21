@@ -53,4 +53,6 @@ gem 'devise'
 
 gem 'rswag'
 
+gem 'rswag-ui'
+
 gem 'devise-token_authenticatable'
