@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  mount Rswag::Api::Engine => '/api-docs'
   namespace :api do
     namespace :v1 do
       resources :users, only: %i[index update show create destroy]
