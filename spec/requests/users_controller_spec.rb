@@ -7,15 +7,15 @@ RSpec.describe Api::V1::UsersController, type: :request do
       produces 'application/json'
       response '200', 'OK' do
         schema type: :array,
-          items: {
-            type: :object,
-            properties: {
-              id: { type: :integer },
-              username: { type: :string },
-              email: { type: :string },
-            },
-            required: ['id', 'username', 'email']
-          }
+               items: {
+                 type: :object,
+                 properties: {
+                   id: { type: :integer },
+                   username: { type: :string },
+                   email: { type: :string }
+                 },
+                 required: %w[id username email]
+               }
         run_test!
       end
     end
@@ -30,25 +30,25 @@ RSpec.describe Api::V1::UsersController, type: :request do
           email: { type: :string },
           password: { type: :string }
         },
-        required: ['username', 'email', 'password']
+        required: %w[username email password]
       }
 
       response '201', 'User created successfully' do
         schema type: :object,
-          properties: {
-            id: { type: :integer },
-            username: { type: :string },
-            email: { type: :string }
-          },
-          required: ['id', 'username', 'email']
+               properties: {
+                 id: { type: :integer },
+                 username: { type: :string },
+                 email: { type: :string }
+               },
+               required: %w[id username email]
         run_test!
       end
 
       response '422', 'Invalid data - User not created' do
         schema type: :object,
-          properties: {
-            error: { type: :string }
-          }
+               properties: {
+                 error: { type: :string }
+               }
         run_test!
       end
     end
@@ -63,20 +63,20 @@ RSpec.describe Api::V1::UsersController, type: :request do
 
         response '200', 'OK' do
           schema type: :object,
-            properties: {
-              id: { type: :integer },
-              username: { type: :string },
-              email: { type: :string },
-            },
-            required: ['id', 'username', 'email']
+                 properties: {
+                   id: { type: :integer },
+                   username: { type: :string },
+                   email: { type: :string }
+                 },
+                 required: %w[id username email]
           run_test!
         end
 
         response '404', 'User not found' do
           schema type: :object,
-            properties: {
-              error: { type: :string }
-            }
+                 properties: {
+                   error: { type: :string }
+                 }
           run_test!
         end
       end
@@ -89,17 +89,17 @@ RSpec.describe Api::V1::UsersController, type: :request do
 
       response '200', 'User deleted successfully' do
         schema type: :object,
-          properties: {
-            message: { type: :string }
-          }
+               properties: {
+                 message: { type: :string }
+               }
         run_test!
       end
 
       response '404', 'User not found' do
         schema type: :object,
-          properties: {
-            error: { type: :string }
-          }
+               properties: {
+                 error: { type: :string }
+               }
         run_test!
       end
     end
