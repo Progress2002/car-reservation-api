@@ -3,7 +3,8 @@ RSpec.describe Car, type: :model do
   let(:user) { User.create(username: 'sam', email: 'sam@gmail.com', password: 'password') }
   subject do
     Car.new(user_id: user.id, name: 'Honda',
-            image: 'https://imageio.forbes.com/specials-images/imageserve/5d35eacaf1176b0008974b54/0x0.jpg?format=jpg&crop=4560,2565,x790,y784,safe&width=1200', description: 'Good car', model: '2023', price: 23_000.0)
+            image: 'https://imageio.forbes.com/specials-images/imageserve/5d35eacaf1176b0008974b54/0x0.jpg?format
+            =jpg&crop=4560,2565,x790,y784,safe&width=1200', description: 'Good car', model: '2023', price: 23_000.0)
   end
   context 'Testing validations' do
     it 'Car should be invalid with name set to nil' do
