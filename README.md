@@ -149,12 +149,6 @@ You can deploy this project using: [render](https://render.com/).
 
 ```
 
-## 🗎 Hosted API Documentation <a name="api-docs"></a>
-
-- Check here API documentation [CarBooker app](https://carbooker.onrender.com/api-docs/index.html)
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
 ## Authors <a name="authors"></a>
 
 👤 **Progress**
