@@ -20,7 +20,6 @@ default: &default
   # For details on connection pooling, see Rails configuration guide
   # https://guides.rubyonrails.org/configuring.html#database-pooling
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
-
 development:
   <<: *default
   database: car_reservation_api_development
@@ -81,6 +80,4 @@ test:
 #
 production:
   <<: *default
-  database: car_reservation_api_production
-  username: car_reservation_api
-  password: <%= ENV["CAR_RESERVATION_API_DATABASE_PASSWORD"] %>
+  url: <%= ENV['DATABASE_URL'] %>

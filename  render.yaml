@@ -1,0 +1,18 @@
+databases:
+  - name: carbooker
+    databaseName: carbooker
+    user: carbooker_user
+
+services:
+  - type: web
+    name: carbooker
+    runtime: ruby
+    buildCommand: "./bin/render-build.sh"
+    startCommand: "bundle exec puma -C config/puma.rb"
+    envVars:
+      - key: DATABASE_URL
+        fromDatabase:
+          name: carbooker
+          property: connectionString
+      - key: RAILS_MASTER_KEY
+        sync: false
