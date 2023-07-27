@@ -1,9 +1,11 @@
 ### Table of Contents
 
-- [📖 About the Project](#about)
+- [📖 carBooker](#car-booker)
   - [🛠 Built With](#built-with)
     - [Tech Stack](#tech-stack)
     - [Key Features](#key-features)
+    - [Kanban Board ](#-kanban-board-)
+    - [React Frontend ](#-react-frontend-)
 - [💻 Getting Started](#getting-started)
   - [Setup](#setup)
   - [Prerequisites](#prerequisites)
@@ -11,7 +13,7 @@
   - [Usage](#usage)
   - [Run tests](#run-tests)
   - [Deployment](#deployment)
-- [📝 API documentation](#license)
+- [📝 API documentation](#api-documentation)
 - [👥 Authors](#authors)
 - [🔭 Future Features](#future-features)
 - [🤝 Contributing](#contributing)
@@ -19,27 +21,14 @@
 - [🙏 Acknowledgements](#acknowledgements)
 - [📝 License](#license)
 
-### About  <a name="about-project"></a>
+## 📖 CarBooker <a name="about-project"></a>
 
-CarBooker is an app that allows users to upload cars and reserve car for a duration of time 
+Cabooker (Backend) is a RESTful API for a car booking application. It allows users to book a car for a specific date and time. It also allows users to add and delete cars. The API is built with Ruby on Rails and uses Postgres as the database. It is consumed by its front-end counterpart [car-booker front-end](https://github.com/yodit93/car-reservation-front-end.git).
+
 
 ## Built With <a name="built-with"></a>
 
 ### Tech Stack <a name="tech-stack"></a>
-
-<details>
-  <summary>Client</summary>
-  <ul>
-    <li>HTML(erb), CSS</li>
-  </ul>
-</details>
-
-<details>
-  <summary>Frontend</summary>
-  <ul>
-    <li>React</li>
-  </ul>
-</details>
 
 <details>
   <summary>Backend</summary>
@@ -48,15 +37,46 @@ CarBooker is an app that allows users to upload cars and reserve car for a durat
   </ul>
 </details>
 
+<details>
+  <summary>Database</summary>
+  <ul>
+    <li>Postgresql</li>
+  </ul>
+</details>
+
+### ERD Diagram <a name="erd-diagram"></a>
+
+[ERD Diagram](https://lucid.app/lucidchart/3885e52f-ffbe-4394-a17c-22c1cd5f931a/edit?viewport_l[…]C909%2C0_0&invitationId=inv_7ce0f69f-1908-44d7-9875-841ddbc89414)
+
 ### Key Features <a name="key-features"></a>
 
+Api end points for users to:
+- Sign up
+- Sign in
+- Sign out
 - Add appointment for a Cars
 - Delete appointment for a Cars
 - Create and Delete Cars
 
-
 <p align="right">(<a href="#table-of-contents">back to top</a>)</p>
 
+<!-- KANBAN BOARD -->
+
+## <img src="https://cdn-icons-png.flaticon.com/512/5360/5360804.png" width="23" height="20"/> Kanban Board <a name="kanban-board"></a>
+
+- This project was built with a team of four.
+- Kanban Board Link [Kanban Board](https://github.com/users/yodit93/projects/7/views/1)
+- Initial state of the Kanban board [Kanban Board Screenshot](https://user-images.githubusercontent.com/53250640/253284640-fe30f83b-f7e1-4e34-ba79-e3127288e6dc.png)
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<!-- REACT FRONTEND -->
+
+## <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/539px-React-icon.svg.png" width="23" height="20"/> React Frontend <a name="rails-backend"></a>
+
+- CarBooker frontend [CarBooker frontend](https://github.com/yodit93/car-reservation-front-end.git)
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ## Getting Started <a name="getting-started"></a>
 
@@ -69,8 +89,6 @@ In order to run this project you need:
 - Latest version of Ruby on Rails
 
 ### Setup
-
-This API is consumed by its front-end counterpart [front-end](https://github.com/yodit93/car-reservation-front-end.git)
 
 Clone this [repo](https://github.com/Progress2002/car-reservation-api.git) to your desired folder.
 
@@ -125,10 +143,17 @@ You can deploy this project using: [render](https://render.com/).
 ## API Documentation
 
 **Once connected to the database, you can check the full API Documentation in here (please, double check the port):**
+
 ```
-//127.0.0.1:3001/api-docs/index.html
+ http://127.0.0.1:3001/api-docs/index.html
+
 ```
- 
+
+## 🗎 Hosted API Documentation <a name="api-docs"></a>
+
+- Check here API documentation [CarBooker app](https://carbooker.onrender.com/api-docs/index.html)
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ## Authors <a name="authors"></a>
 
@@ -159,7 +184,7 @@ You can deploy this project using: [render](https://render.com/).
 
 ## Future Features <a name="future-features"></a>
 
-- **Add Amin role**
+- **Add Admin role**
 - **Edit moto description**
 
 
